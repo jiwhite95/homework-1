@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #8b1e4b;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #f472b6;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e293b;
+    color: #ffffff;
+    margin-top: 40px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 12px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f472b6;
+}
+
+.interests-card {
+    background-color: #1e293b;
+    color: #ffffff;
+    border: 2px solid #f472b6;
+    border-radius: 8px;
+    padding: 15px 25px;
+    margin: 20px 0;
+}
+
+.profile-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 15px 0;
+}
+
+#mom-life {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-left: 5px solid #f472b6;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+#hobbies {
+    margin-bottom: 30px;
+}
