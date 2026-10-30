@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,77 +9,120 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
     background-color: #1e293b;
-    color: #ffffff;
+    padding: 20px 15px;
     text-align: center;
-    padding: 25px 20px;
-    margin-bottom: 20px;
     border-bottom: 4px solid #f472b6;
 }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Flexbox for Navigation */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #f472b6;
+}
+
+/* Mobile-First Layout Base (320px Viewport) */
+.page-layout {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+}
+
+.interests-card {
+    background-color: #0f172a;
+    border: 2px solid #f472b6;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-top: 15px;
+}
+
+#mom-life {
+    border-left: 5px solid #f472b6;
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: #1e293b;
-    color: #ffffff;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* --- MEDIA QUERIES --- */
+
+/* Tablet Viewport (768px Breakpoint) */
+@media (min-width: 768px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    .nav-links {
+        gap: 30px;
+    }
+
+    .card {
+        padding: 25px;
+    }
 }
 
-nav li {
-    display: inline;
-    margin: 0 12px;
-}
+/* Desktop Viewport (1200px Breakpoint) - Multi-Column Grid */
+@media (min-width: 1200px) {
+    .page-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "about hobbies"
+            "momlife momlife";
+        gap: 25px;
+    }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
+    #about-intro {
+        grid-area: about;
+    }
 
-nav a:hover {
-    color: #f472b6;
-}
+    #hobbies {
+        grid-area: hobbies;
+    }
 
-.interests-card {
-    background-color: #1e293b;
-    color: #ffffff;
-    border: 2px solid #f472b6;
-    border-radius: 8px;
-    padding: 15px 25px;
-    margin: 20px 0;
-}
-
-.profile-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin: 15px 0;
-}
-
-#mom-life {
-    background-color: #1e293b;
-    color: #ffffff;
-    border-left: 5px solid #f472b6;
-    border-radius: 4px;
-    padding: 20px;
-    margin: 25px 0;
-}
-
-#hobbies {
-    margin-bottom: 30px;
+    #mom-life {
+        grid-area: momlife;
+    }
 }
