@@ -1,9 +1,20 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     background-color: #8b1e4b;
     color: #ffffff;
@@ -12,21 +23,26 @@ body {
     overflow-x: hidden;
 }
 
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: var(--space-16);
+}
+
 header {
     background-color: #1e293b;
-    padding: 20px 15px;
+    padding: var(--space-24) var(--space-16);
     text-align: center;
     border-bottom: 4px solid #f472b6;
 }
 
-/* Flexbox for Navigation */
 .nav-links {
     list-style: none;
     padding: 0;
-    margin: 15px 0 0 0;
+    margin: var(--space-16) 0 0 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: var(--space-16);
     flex-wrap: wrap;
 }
 
@@ -34,76 +50,85 @@ header {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    padding: var(--space-8) var(--space-16);
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
     color: #f472b6;
 }
 
-/* Mobile-First Layout Base (320px Viewport) */
 .page-layout {
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
+    margin: var(--space-24) auto;
+    padding: 0 var(--space-16);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-24);
 }
 
 .card {
     background-color: #1e293b;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: var(--space-8);
+    padding: var(--space-24);
     width: 100%;
 }
 
 .interests-card {
     background-color: #0f172a;
     border: 2px solid #f472b6;
-    border-radius: 6px;
-    padding: 15px;
-    margin-top: 15px;
+    border-radius: var(--space-8);
+    padding: var(--space-16);
+    margin-top: var(--space-16);
 }
 
 .profile-img {
     width: 100%;
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--space-8);
     display: block;
-    margin-top: 15px;
+    margin-top: var(--space-16);
+}
+
+#about-intro {
+    border-left: 4px solid #f472b6;
+}
+
+#hobbies {
+    border-left: 4px solid #f472b6;
 }
 
 #mom-life {
-    border-left: 5px solid #f472b6;
+    border-left: 4px solid #f472b6;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: var(--space-24);
     background-color: #1e293b;
-    margin-top: 30px;
+    margin-top: var(--space-32);
 }
 
-/* --- MEDIA QUERIES --- */
-
-/* Tablet Viewport (768px Breakpoint) */
 @media (min-width: 768px) {
     header {
-        padding: 30px 20px;
+        padding: var(--space-32) var(--space-24);
     }
 
     .nav-links {
-        gap: 30px;
+        gap: var(--space-32);
+    }
+
+    .page-layout {
+        padding: 0 var(--space-24);
     }
 
     .card {
-        padding: 25px;
+        padding: var(--space-32);
     }
 }
 
-/* Desktop Viewport (1200px Breakpoint) - Multi-Column Grid */
 @media (min-width: 1200px) {
     .page-layout {
         display: grid;
@@ -111,7 +136,8 @@ footer {
         grid-template-areas: 
             "about hobbies"
             "momlife momlife";
-        gap: 25px;
+        gap: var(--space-24);
+        padding: 0;
     }
 
     #about-intro {
