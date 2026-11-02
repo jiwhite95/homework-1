@@ -16,8 +16,8 @@
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    background-color: #8b1e4b;
-    color: #ffffff;
+    background-color: #ffeef3;
+    color: #333333;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -27,13 +27,18 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     line-height: 1.2;
     margin-bottom: var(--space-16);
+    color: #ff6f6f;
 }
 
 header {
-    background-color: #1e293b;
+    background-color: #ffffff;
     padding: var(--space-24) var(--space-16);
     text-align: center;
-    border-bottom: 4px solid #f472b6;
+    border-bottom: 4px solid #ff6f6f;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 .nav-links {
@@ -47,15 +52,18 @@ header {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #ff6f6f;
     text-decoration: none;
     font-weight: bold;
     padding: var(--space-8) var(--space-16);
-    transition: color 0.2s ease;
+    border: 2px solid transparent;
+    border-radius: var(--space-8);
+    transition: all 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #f472b6;
+    background-color: #ffeef3;
+    border-color: #ff6f6f;
 }
 
 .page-layout {
@@ -69,18 +77,23 @@ header {
 }
 
 .card {
-    background-color: #1e293b;
+    background-color: #ffffff;
     border-radius: var(--space-8);
     padding: var(--space-24);
     width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .interests-card {
-    background-color: #0f172a;
-    border: 2px solid #f472b6;
+    background-color: #fff9db;
+    border: 2px solid #ffde7c;
     border-radius: var(--space-8);
     padding: var(--space-16);
     margin-top: var(--space-16);
+}
+
+.interests-card h3 {
+    color: #ff6f6f;
 }
 
 .profile-img {
@@ -92,23 +105,28 @@ header {
     margin-top: var(--space-16);
 }
 
+#mom-life .profile-img {
+    margin-top: var(--space-24);
+}
+
 #about-intro {
-    border-left: 4px solid #f472b6;
+    border-left: 4px solid #ff6f6f;
 }
 
 #hobbies {
-    border-left: 4px solid #f472b6;
+    border-left: 4px solid #ffde7c;
 }
 
 #mom-life {
-    border-left: 4px solid #f472b6;
+    border-left: 4px solid #ff6f6f;
 }
 
 footer {
     text-align: center;
     padding: var(--space-24);
-    background-color: #1e293b;
+    background-color: #ffffff;
     margin-top: var(--space-32);
+    border-top: 2px solid #ffeef3;
 }
 
 @media (min-width: 768px) {
@@ -150,5 +168,19 @@ footer {
 
     #mom-life {
         grid-area: momlife;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-24);
+    }
+
+    #mom-life .mom-life-text {
+        flex: 1;
+    }
+
+    #mom-life .profile-img {
+        flex: 1;
+        margin-top: 0;
+        max-width: 400px;
     }
 }
