@@ -27,7 +27,7 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     line-height: 1.2;
     margin-bottom: var(--space-16);
-    color: #ff6f6f;
+    color: #c82333;
 }
 
 header {
@@ -52,7 +52,7 @@ h1 {
 }
 
 .nav-links a {
-    color: #ff6f6f;
+    color: #c82333;
     text-decoration: none;
     font-weight: bold;
     padding: var(--space-8) var(--space-16);
@@ -63,7 +63,7 @@ h1 {
 
 .nav-links a:hover {
     background-color: #ffeef3;
-    border-color: #ff6f6f;
+    border-color: #c82333;
 }
 
 .page-layout {
@@ -93,7 +93,7 @@ h1 {
 }
 
 .interests-card h3 {
-    color: #ff6f6f;
+    color: #c82333;
 }
 
 .profile-img {
