@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Jiya White</title>
+    <title>Jiya White | About & Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <h1>About Me</h1>
+        <h1>Jiya White</h1>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -22,28 +22,78 @@
     </header>
 
     <main class="page-layout">
-        <section id="about-intro" class="card">
-            <h2>My Story</h2>
-            <p>Welcome to my corner of the web! I am a dedicated student, an aspiring cybersecurity analyst, and a proud mom balancing academics with everyday life.</p>
-            <img src="IMG_5765.jpg" alt="Me with my son and daughter" class="profile-img">
+        <!-- About Section Card -->
+        <section class="card" id="about-intro">
+            <h2>About My Journey</h2>
+            <p>Balancing coursework, personal growth, and being a dedicated mom to my two children is at the heart of everything I do. Every step I take is driven by the desire to build a bright and secure future for my family.</p>
         </section>
 
-        <section id="hobbies" class="card">
-            <h2>Balancing Life & Learning</h2>
-            <p>Juggling life as a mom of two while maintaining a 4.0 GPA in my IT and cybersecurity studies takes focus, resilience, and a lot of late-night dedication.</p>
-            <article class="interests-card">
-                <h3>Values & Goals</h3>
-                <ul>
-                    <li>Building a brighter future for my kids</li>
-                    <li>Striving for excellence in my education</li>
-                    <li>Pursuing a meaningful career in technology</li>
-                </ul>
-            </article>
-        </section>
+        <!-- Accessible Contact Form Card -->
+        <section class="card contact-card" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+            <p>Have a question, collaboration idea, or want to connect? Send a message below.</p>
 
-        <section id="mom-life" class="card">
-            <h2>Beyond the Screen</h2>
-            <p>When I'm not hitting the books or practicing web development, you can find me enjoying quiet moments with a good book, listening to music, or making special memories with my children.</p>
+            <form id="contact-form" novalidate>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+                    <input 
+                        type="text" 
+                        id="full-name" 
+                        name="fullName" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="name-error"
+                    />
+                    <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="email-error"
+                    />
+                    <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
+
+                <!-- Fieldset & Legend for Radio Options -->
+                <fieldset class="form-fieldset">
+                    <legend>Reason for Contacting <span aria-hidden="true">*</span></legend>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="reason-general" name="reason" value="general" checked />
+                        <label for="reason-general">General Question</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="reason-collab" name="reason" value="collab" />
+                        <label for="reason-collab">Collaboration / Project</label>
+                    </div>
+                </fieldset>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="message-error"
+                    ></textarea>
+                    <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+                <p id="form-status" role="status" aria-live="polite"></p>
+            </form>
         </section>
     </main>
 
