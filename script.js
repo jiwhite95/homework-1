@@ -1,30 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Stops the page from reloading and jumping to the top!
+  if (!form) return;
 
-      let isValid = true;
-      const nameInput = document.getElementById("name");
-      const emailInput = document.getElementById("email");
-      const errorRegion = document.getElementById("form-errors"); // Optional ARIA live region
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevents page reload
 
-      // Simple validation check
-      if (!nameInput.value.trim() || !emailInput.value.trim()) {
-        isValid = false;
-        if (errorRegion) {
-          errorRegion.textContent = "Please fill out all required fields before submitting.";
-        } else {
-          alert("Please fill out all required fields.");
-        }
-      } else {
-        if (errorRegion) {
-          errorRegion.textContent = "";
-        }
-        alert("Thank you! Your message has been sent successfully.");
-        form.reset();
-      }
-    });
-  }
+    // Grab inputs matching your exact about.html IDs
+    const nameInput = document.getElementById("full-name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+
+    // Grab ARIA live error/status spans
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const messageError = document.getElementById("message-error");
+    const formStatus = document.getElementById("form-status");
+
+    // Clear previous messages
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    formStatus.textContent = "";
+
+    let isValid = true;
+
+    // Validate Full Name
+    if (!nameInput.value.trim()) {
+      nameError.textContent = "Please enter your full name.";
+      isValid = false;
+    }
+
+    // Validate Email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailInput.value.trim()) {
+      emailError.textContent = "Please enter your email address.";
+      isValid = false;
+    } else if (!emailPattern.test(emailInput.value.trim())) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    // Validate Message
+    if (!messageInput.value.trim()) {
+      messageError.textContent = "Please enter a message before sending.";
+      isValid = false;
+    }
+
+    // Show confirmation if everything is valid
+    if (isValid) {
+      formStatus.textContent = "Thank you! Your message has been sent.";
+      form.reset();
+    }
+  });
 });
